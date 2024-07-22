@@ -8,7 +8,7 @@ public class HoukiControl : MonoBehaviour
     [Header("è¡Ç¶ÇÈë¨ìx")] public float ChangeSpeed = 10f;
     public MaidSkill1 maidSkill1;
     private SpriteRenderer spriteRenderer;
-    private BoxCollider2D boxCollider;
+    private PolygonCollider2D polygonCollider;
     private int damage;
     private float knockbackPower;
     private bool toAlphaUp;
@@ -17,8 +17,8 @@ public class HoukiControl : MonoBehaviour
     void Start()
     {
         spriteRenderer= GetComponent<SpriteRenderer>();
-        boxCollider= GetComponent<BoxCollider2D>();
-        boxCollider.enabled= false;
+        polygonCollider = GetComponent<PolygonCollider2D>();
+        polygonCollider.enabled= false;
         damage = maidSkill1.ReturnDamage();
         knockbackPower = 1f;
         toAlphaUp = false;
@@ -74,7 +74,7 @@ public class HoukiControl : MonoBehaviour
         if (!toAlphaUp)
         {
             toAlphaUp = true;
-            boxCollider.enabled = true;
+            polygonCollider.enabled = true;
         }
     }
 
@@ -89,7 +89,7 @@ public class HoukiControl : MonoBehaviour
     public void SetAlphaZero()
     {
         spriteRenderer.color = new Color(1, 1, 1, 0);
-        boxCollider.enabled = false;
+        polygonCollider.enabled = false;
     }
 
     public int ReturnDamage()

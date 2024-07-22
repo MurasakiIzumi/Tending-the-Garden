@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8602383395470158583}
   - component: {fileID: 7619791579568481009}
   - component: {fileID: 5932908567950697379}
-  - component: {fileID: 8393046511789502884}
+  - component: {fileID: 7152357740722138407}
   m_Layer: 0
   m_Name: Houki
   m_TagString: Untagged
@@ -98,9 +98,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e3e3249eb994994896b23813efafd4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ChangeSpeed: 10
   maidSkill1: {fileID: 0}
---- !u!61 &8393046511789502884
-BoxCollider2D:
+--- !u!60 &7152357740722138407
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -128,7 +129,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -141,6 +142,19 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 2, y: 6}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.20099449, y: 2.96875}
+      - {x: 0.125, y: 3}
+      - {x: -0.1875, y: 3}
+      - {x: -0.1875, y: 2.9375}
+      - {x: -0.2185831, y: -0.7070259}
+      - {x: -0.57277775, y: -0.7158182}
+      - {x: -0.77344227, y: -1.1886156}
+      - {x: -1, y: -3}
+      - {x: 1, y: -3}
+      - {x: 0.9413805, y: -2.4375}
+      - {x: 0.6132345, y: -0.7265525}
+      - {x: 0.21482849, y: -0.7109476}
+      - {x: 0.21942806, y: 2.9789407}
+  m_UseDelaunayMesh: 0

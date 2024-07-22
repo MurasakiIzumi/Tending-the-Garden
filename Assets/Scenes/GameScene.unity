@@ -114777,6 +114777,10 @@ PrefabInstance:
       propertyPath: m_Color.a
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6056040981872003122, guid: fbcc001bc78a3694993d43f196d6ac17, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6172736850903538403, guid: fbcc001bc78a3694993d43f196d6ac17, type: 3}
       propertyPath: ChangeSpeed
       value: 10
