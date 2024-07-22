@@ -306,6 +306,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MaidSkill1
       objectReference: {fileID: 0}
+    - target: {fileID: 2616663049953513804, guid: a2efd1019c7559b4dae07bad66d67716, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 2039794830757997935}
     - target: {fileID: 3351041851233508559, guid: a2efd1019c7559b4dae07bad66d67716, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -349,33 +353,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2044908548526476464, guid: a2efd1019c7559b4dae07bad66d67716, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 6847931466961400280}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a2efd1019c7559b4dae07bad66d67716, type: 3}
---- !u!1 &1226531029847710089 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2044908548526476464, guid: a2efd1019c7559b4dae07bad66d67716, type: 3}
-  m_PrefabInstance: {fileID: 965311855776339257}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &6847931466961400280
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1226531029847710089}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d990bea622de64c42a7fd7e5079d545d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Player: {fileID: 0}
-  rotatespeed: 10
-  damage: 20
-  Houki: {fileID: 0}
-  skillLv: 0
 --- !u!4 &2586245736991033846 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3351041851233508559, guid: a2efd1019c7559b4dae07bad66d67716, type: 3}

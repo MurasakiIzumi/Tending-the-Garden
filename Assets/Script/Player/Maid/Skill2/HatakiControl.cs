@@ -7,9 +7,12 @@ public class HatakiControl : MonoBehaviour
     public MaidSkill2 maidSkill2;
     private float rotateSpeed;
     private int damage;
+    private float knockbackPower;
+
     void Start()
     {
         damage = maidSkill2.ReturnDamage();
+        knockbackPower = 1f;
     }
 
     void Update()
@@ -26,5 +29,10 @@ public class HatakiControl : MonoBehaviour
     public int ReturnDamage()
     {
         return damage;
+    }
+
+    public float ReturnKonckPower()
+    {
+        return knockbackPower;
     }
 }

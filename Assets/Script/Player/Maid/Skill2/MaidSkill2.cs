@@ -46,7 +46,7 @@ public class MaidSkill2 : MonoBehaviour
 
     private void SkillLevelCheck()
     {
-        if (skillLv == realskillLv)
+        if (skillLv <= realskillLv)
         {
             return;
         }

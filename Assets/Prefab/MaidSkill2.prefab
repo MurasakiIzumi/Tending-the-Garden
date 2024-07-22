@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4519375177055252088}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -108,6 +108,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5518802106537801565, guid: 86d5369fa16d6294fbb1b35b27170219, type: 3}
+      propertyPath: maidSkill2
+      value: 
+      objectReference: {fileID: 5904935543508324262}
     - target: {fileID: 8110028174432815437, guid: 86d5369fa16d6294fbb1b35b27170219, type: 3}
       propertyPath: m_Name
       value: Hataki
@@ -175,6 +179,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5518802106537801565, guid: 86d5369fa16d6294fbb1b35b27170219, type: 3}
+      propertyPath: maidSkill2
+      value: 
+      objectReference: {fileID: 5904935543508324262}
     - target: {fileID: 8110028174432815437, guid: 86d5369fa16d6294fbb1b35b27170219, type: 3}
       propertyPath: m_Name
       value: Hataki (2)
@@ -242,6 +250,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5518802106537801565, guid: 86d5369fa16d6294fbb1b35b27170219, type: 3}
+      propertyPath: maidSkill2
+      value: 
+      objectReference: {fileID: 5904935543508324262}
     - target: {fileID: 8110028174432815437, guid: 86d5369fa16d6294fbb1b35b27170219, type: 3}
       propertyPath: m_Name
       value: Hataki (1)
@@ -309,6 +321,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5518802106537801565, guid: 86d5369fa16d6294fbb1b35b27170219, type: 3}
+      propertyPath: maidSkill2
+      value: 
+      objectReference: {fileID: 5904935543508324262}
     - target: {fileID: 8110028174432815437, guid: 86d5369fa16d6294fbb1b35b27170219, type: 3}
       propertyPath: m_Name
       value: Hataki (5)
@@ -376,6 +392,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5518802106537801565, guid: 86d5369fa16d6294fbb1b35b27170219, type: 3}
+      propertyPath: maidSkill2
+      value: 
+      objectReference: {fileID: 5904935543508324262}
     - target: {fileID: 8110028174432815437, guid: 86d5369fa16d6294fbb1b35b27170219, type: 3}
       propertyPath: m_Name
       value: Hataki (3)
@@ -443,6 +463,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5518802106537801565, guid: 86d5369fa16d6294fbb1b35b27170219, type: 3}
+      propertyPath: maidSkill2
+      value: 
+      objectReference: {fileID: 5904935543508324262}
     - target: {fileID: 8110028174432815437, guid: 86d5369fa16d6294fbb1b35b27170219, type: 3}
       propertyPath: m_Name
       value: Hataki (4)
