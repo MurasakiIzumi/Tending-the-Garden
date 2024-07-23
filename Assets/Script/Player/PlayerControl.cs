@@ -7,6 +7,9 @@ public class PlayerControl : MonoBehaviour
     [Header("ˆÚ“®‘¬“x")] public float moveSpeed;
     [Header("‰Œ–‹")] public GameObject Smoke;
 
+    [SerializeField] private int Level = 1;
+    [SerializeField] private int Exp = 0;
+
     //[Header("Žè“®ƒXƒMƒ‹")] public GameObject Skill;
     //[Header("Ž©“®ƒXƒMƒ‹1")] public GameObject Skill1;
     //[Header("Ž©“®ƒXƒMƒ‹2")] public GameObject Skill2;
@@ -102,8 +105,13 @@ public class PlayerControl : MonoBehaviour
         }
     }
 
+    public void GetExp(int exp)
+    {
+        Exp += exp;
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-
+       
     }
 }

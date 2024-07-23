@@ -65,8 +65,6 @@ public class HoukiControl : MonoBehaviour
         }
 
         spriteRenderer.color = color;
-
-        Debug.Log(spriteRenderer.color);
     }
 
     public void SetAlphaUpStart()

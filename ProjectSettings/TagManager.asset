@@ -4,8 +4,12 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Grass
-  - Dirt
+  - GetExpArea
+  - Exp.
+  - Hataki
+  - Houki
+  - Bullet
+  - KnockExplosion
   layers:
   - Default
   - TransparentFX

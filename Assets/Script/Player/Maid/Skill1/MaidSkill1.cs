@@ -9,8 +9,7 @@ public class MaidSkill1 : MonoBehaviour
     [Header("‰ñ“]‘¬“x")] public float rotatespeed = 100f;
     [Header("‰ñ“]Šp“x")] public float rotaterange = 90f;
     [Header("UŒ‚—Í")] public int damage = 20;
-    [Header("‚Ù‚¤‚«")]
-    public GameObject Houki;
+    [Header("‚Ù‚¤‚«")] public GameObject Houki;
 
     [SerializeField] public int skillLv = 1;
     private int realskillLv;
@@ -36,7 +35,6 @@ public class MaidSkill1 : MonoBehaviour
         RighttoLeft = true;
     }
 
-    // Update is called once per frame
     void Update()
     {
         StartCheck();
