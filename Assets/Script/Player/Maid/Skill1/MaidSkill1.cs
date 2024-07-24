@@ -28,7 +28,7 @@ public class MaidSkill1 : MonoBehaviour
 
     void Start()
     {
-        realskillLv = 1;
+        realskillLv = 0;
         realdamage = damage;
         toStart = false;
         isRun = false;

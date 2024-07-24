@@ -35,4 +35,18 @@ public class HatakiControl : MonoBehaviour
     {
         return knockbackPower;
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Enemy")
+        {
+            EnemyControl Enemy = collision.GetComponent<EnemyControl>();
+
+            if (Enemy.CanBeKnockBack())
+            {
+                Enemy.GetHurt(maidSkill2.ReturnDamage());
+                Enemy.StartKnockBack(maidSkill2.transform.position, knockbackPower);
+            }
+        }
+    }
 }

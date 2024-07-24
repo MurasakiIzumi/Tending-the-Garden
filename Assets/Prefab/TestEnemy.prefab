@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 4925777887247973237}
   m_Layer: 0
   m_Name: TestEnemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -103,6 +103,8 @@ MonoBehaviour:
   MaxHp: 10
   Damage: 5
   Speed: 1
+  BackPower: 5
+  Exp: {fileID: 5916183812000509986, guid: 2afd38c92b6bd9e49b25d9e8d6f72e18, type: 3}
 --- !u!70 &4653710581966368233
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

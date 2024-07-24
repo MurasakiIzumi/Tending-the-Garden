@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ExpControl : MonoBehaviour
 {
-    [Header("経験値")] public int Exp = 10;
+    [Header("経験値")] public int Exp = 1;
     [Header("移動速度")] public float Speed = 10f;
 
     private GameObject player;

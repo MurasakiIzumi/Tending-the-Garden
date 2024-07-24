@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class PlayerControl : MonoBehaviour
 {
+    [Header("Å‘åHP")] public int MaxHp;
     [Header("ˆÚ“®‘¬“x")] public float moveSpeed;
     [Header("‰Œ–‹")] public GameObject Smoke;
 
-    [SerializeField] private int Level = 1;
-    [SerializeField] private int Exp = 0;
+    [SerializeField] private int Level;
+    [SerializeField] private int Exp;
+    [SerializeField] private int Hp;
 
     //[Header("è“®ƒXƒMƒ‹")] public GameObject Skill;
     //[Header("©“®ƒXƒMƒ‹1")] public GameObject Skill1;
@@ -22,14 +24,34 @@ public class PlayerControl : MonoBehaviour
     private float timer_smoke;
     private float time_smoke;
 
+    private int ExpNeed;
+
+    private bool nodamage;
+    private float timer_nodamge;
+    private float time_nodamge;
+
+    private float knockbackPower;
+
     void Start()
     {
         animator = GetComponent<Animator>();
         spriteRenderer=GetComponent<SpriteRenderer>();
         audioSource=GetComponent<AudioSource>();
 
+        Level = 1;
+        Exp = 0;
+        Hp = MaxHp;
+
         timer_smoke = 0;
         time_smoke = 0.2f;
+
+        ExpNeed = 4;
+
+        nodamage = false;
+        timer_nodamge = 0;
+        time_nodamge = 0.2f;
+
+        knockbackPower = 2f;
     }
 
 
@@ -37,6 +59,8 @@ public class PlayerControl : MonoBehaviour
     {
         ForwardChange();
         PlayerMove();
+        LevelUp();
+        NodamageTimer();
     }
 
     private void ForwardChange()
@@ -105,9 +129,51 @@ public class PlayerControl : MonoBehaviour
         }
     }
 
+    private void LevelUp()
+    {
+        if (Exp >= ExpNeed)
+        {
+            Exp = 0;
+            Level++;
+            ExpNeed *= 2;
+        }
+    }
+
     public void GetExp(int exp)
     {
         Exp += exp;
+    }
+
+    public void GetHurt(int damage)
+    {
+        if (!nodamage)
+        {
+            Hp-=damage;
+            nodamage = true;
+        }
+    }
+
+    private void NodamageTimer()
+    {
+        if (!nodamage)
+        {
+            return;
+        }
+
+        if (timer_nodamge >= time_nodamge)
+        {
+            timer_nodamge = 0;
+            nodamage = false;
+        }
+        else
+        {
+            timer_nodamge += Time.deltaTime;
+        }
+    }
+
+    public float ReturnKonckPower()
+    {
+        return knockbackPower;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
