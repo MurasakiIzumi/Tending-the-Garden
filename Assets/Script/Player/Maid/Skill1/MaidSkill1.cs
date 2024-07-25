@@ -190,7 +190,7 @@ public class MaidSkill1 : MonoBehaviour
     {
         rotaterange *= 3f;
 
-        Debug.Log("メイドスギル2:Lv4");
+        Debug.Log("メイドスギル2:LvMax");
     }
 
     public int ReturnDamage()

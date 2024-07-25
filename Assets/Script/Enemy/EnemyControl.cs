@@ -9,7 +9,7 @@ public class EnemyControl : MonoBehaviour
     [Header("‘¬“x")] public float Speed = 1f;
     [Header("Œ‚‘Þ—Í")] public float BackPower = 5f;
     [Header("ŒoŒ±’l")] public GameObject Exp;
-
+    public int Enemynum;
     private GameObject Player;
     private CircleCollider2D SeachArea;
     private int hp;
