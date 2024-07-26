@@ -149,7 +149,9 @@ MonoBehaviour:
   maxtimes: 2
   cooltime: 1
   damage: 10
-  skillLv: 1
+  ExploA: {fileID: 8768124840883853309, guid: 160792f8e26430c4fa545a14740ad864, type: 3}
+  ExploB: {fileID: 7415946000228894775, guid: 119b99bc044549f4db66c5e7e761055d, type: 3}
+  skillLv: 0
 --- !u!61 &6382116231544461757
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -12,6 +12,7 @@ TagManager:
   - KnockExplosion
   - Enemy
   - MapRange
+  - Explosion
   layers:
   - Default
   - TransparentFX

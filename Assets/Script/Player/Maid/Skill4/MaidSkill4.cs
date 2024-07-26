@@ -10,6 +10,9 @@ public class MaidSkill4 : MonoBehaviour
     [Header("‰ñ”ãŒÀ")] public int maxtimes = 2;
     [Header("‰ñ”‰ñ•œŠÔ")] public float cooltime = 1f;
     [Header("UŒ‚—Í")] public int damage = 10;
+    [Header("”š”­”g")]
+    public GameObject ExploA;
+    public GameObject ExploB;
 
     private PlayerControl Player;
     private SpriteRenderer spriteRenderer;
@@ -20,8 +23,9 @@ public class MaidSkill4 : MonoBehaviour
 
     private bool isRun;
     private bool startCosttimer;
+    private bool canExplo;
 
-    [SerializeField] public int skillLv = 1;
+    [SerializeField] public int skillLv = 0;
     private int realskillLv;
     private int realdamage;
     private float knockbackPower;
@@ -36,6 +40,7 @@ public class MaidSkill4 : MonoBehaviour
         Dir = Vector3.zero;
         isRun = false;
         startCosttimer = false;
+        canExplo = false;
 
         realskillLv = 0;
         realdamage = 0;
@@ -70,6 +75,7 @@ public class MaidSkill4 : MonoBehaviour
             nowTimes--;
             startCosttimer = true;
             spriteRenderer.enabled = false;
+            SetExplo(true);
         }
     }
 
@@ -97,6 +103,7 @@ public class MaidSkill4 : MonoBehaviour
             startCosttimer = false;
             spriteRenderer.enabled = true;
             costTimer = 0f;
+            SetExplo(false);
         }
         else
         {
@@ -140,6 +147,25 @@ public class MaidSkill4 : MonoBehaviour
         }
     }
 
+    private void SetExplo(bool isA)
+    {
+        if (!canExplo)
+        {
+            return;
+        }
+
+        if (isA)
+        {
+            GameObject explo = Instantiate(ExploA, transform.position, Quaternion.identity);
+            explo.GetComponent<TeleExploControl>().SetInfo(realdamage, knockbackPower);
+        }
+        else
+        {
+            GameObject explo = Instantiate(ExploB, transform.position, Quaternion.identity);
+            explo.GetComponent<TeleExploControl>().SetInfo(realdamage, knockbackPower);
+        }
+    }
+
     private void SkillLevelCheck()
     {
         if (skillLv <= realskillLv)
@@ -170,6 +196,7 @@ public class MaidSkill4 : MonoBehaviour
 
     private void SkillLv1()
     {
+        canExplo = true;
         Debug.Log("ƒƒCƒhƒXƒMƒ‹4:Lv1");
     }
 

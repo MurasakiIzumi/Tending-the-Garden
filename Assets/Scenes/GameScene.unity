@@ -115128,7 +115128,7 @@ PrefabInstance:
       objectReference: {fileID: 1149356749}
     - target: {fileID: 4818168145275104409, guid: ae1cab2069be3e146a0e4e7517adeb03, type: 3}
       propertyPath: skillLv
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7341581150047832732, guid: ae1cab2069be3e146a0e4e7517adeb03, type: 3}
       propertyPath: m_LocalPosition.x
