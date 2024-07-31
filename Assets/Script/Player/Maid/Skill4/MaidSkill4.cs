@@ -42,7 +42,7 @@ public class MaidSkill4 : MonoBehaviour
         startCosttimer = false;
         canExplo = false;
 
-        realskillLv = 0;
+        realskillLv = -1;
         realdamage = 0;
         knockbackPower = 1f;
     }

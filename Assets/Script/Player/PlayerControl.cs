@@ -11,6 +11,7 @@ public class PlayerControl : MonoBehaviour
     [SerializeField] private int Level;
     [SerializeField] private int Exp;
     [SerializeField] private int Hp;
+    [SerializeField] private int ExpNeed;
 
     //[Header("Žè“®ƒXƒMƒ‹")] public GameObject Skill;
     //[Header("Ž©“®ƒXƒMƒ‹1")] public GameObject Skill1;
@@ -23,8 +24,6 @@ public class PlayerControl : MonoBehaviour
 
     private float timer_smoke;
     private float time_smoke;
-
-    private int ExpNeed;
 
     private bool nodamage;
     private float timer_nodamge;
@@ -174,6 +173,26 @@ public class PlayerControl : MonoBehaviour
     public float ReturnKonckPower()
     {
         return knockbackPower;
+    }
+
+    public int ReturnHp()
+    {
+        return Hp;
+    }
+
+    public int ReturnLevel()
+    {
+        return Level;
+    }
+
+    public int ReturnExp()
+    {
+        return Exp;
+    }
+
+    public int ReturnMaxExp()
+    {
+        return ExpNeed;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

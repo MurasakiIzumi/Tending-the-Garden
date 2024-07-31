@@ -22,7 +22,7 @@ public class MaidSkill2 : MonoBehaviour
 
     void Start()
     {
-        realskillLv = -999;
+        realskillLv = -1;
         realdamage = 0;
     }
 
