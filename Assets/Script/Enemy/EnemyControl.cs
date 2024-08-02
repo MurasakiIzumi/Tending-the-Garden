@@ -9,6 +9,7 @@ public class EnemyControl : MonoBehaviour
     [Header("速度")] public float Speed = 1f;
     [Header("撃退力")] public float BackPower = 5f;
     [Header("経験値")] public GameObject Exp;
+    [Header("ディレクター")] public Director director;
     public int Enemynum;
     private GameObject Player;
     private CircleCollider2D SeachArea;
@@ -35,6 +36,7 @@ public class EnemyControl : MonoBehaviour
         time_knockback = 0.5f;
         GotoPlayer = false;
         beKnockBack = false;
+        Enemynum = director.ReturnEnemyNum();
     }
 
     void Update()

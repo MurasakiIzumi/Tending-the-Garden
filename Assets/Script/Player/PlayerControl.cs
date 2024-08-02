@@ -13,10 +13,10 @@ public class PlayerControl : MonoBehaviour
     [SerializeField] private int Hp;
     [SerializeField] private int ExpNeed;
 
-    //[Header("Žè“®ƒXƒMƒ‹")] public GameObject Skill;
-    //[Header("Ž©“®ƒXƒMƒ‹1")] public GameObject Skill1;
-    //[Header("Ž©“®ƒXƒMƒ‹2")] public GameObject Skill2;
-    //[Header("Ž©“®ƒXƒMƒ‹3")] public GameObject Skill3;
+    [Header("Žè“®ƒXƒMƒ‹")] public MaidSkill1 Skill1;
+    [Header("Ž©“®ƒXƒMƒ‹1")] public MaidSkill2 Skill2;
+    [Header("Ž©“®ƒXƒMƒ‹2")] public MaidSkill3 Skill3;
+    [Header("Ž©“®ƒXƒMƒ‹3")] public MaidSkill4 Skill4;
 
     private Animator animator;
     private SpriteRenderer spriteRenderer;
@@ -193,6 +193,47 @@ public class PlayerControl : MonoBehaviour
     public int ReturnMaxExp()
     {
         return ExpNeed;
+    }
+
+    public int ReturnSkillLv(int index)
+    {
+        switch (index)
+        {
+            case 1:
+                return Skill1.ReturnSkillLv();
+            case 2:
+                return Skill2.ReturnSkillLv();
+            case 3:
+                return Skill3.ReturnSkillLv();
+            case 4:
+                return Skill4.ReturnSkillLv();
+            default:
+                return 0;
+
+        }
+    }
+
+    public void SetSkillLv(int index)
+    {
+        switch (index)
+        {
+            case 1:
+                Skill1.skillLv++;
+                break;
+            case 2:
+                Skill2.skillLv++;
+                break;
+            case 3:
+                Skill3.skillLv++;
+                break;
+            case 4:
+                Skill4.skillLv++;
+                break;
+            case 5:
+                MaxHp += 10;
+                Hp += 10;
+                break;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

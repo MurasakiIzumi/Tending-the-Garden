@@ -229,4 +229,9 @@ public class MaidSkill4 : MonoBehaviour
     {
         return knockbackPower;
     }
+
+    public int ReturnSkillLv()
+    {
+        return realskillLv;
+    }
 }

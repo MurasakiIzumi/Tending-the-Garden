@@ -143,4 +143,9 @@ public class MaidSkill3 : MonoBehaviour
     {
         return time_cool;
     }
+
+    public int ReturnSkillLv()
+    {
+        return realskillLv;
+    }
 }

@@ -197,4 +197,9 @@ public class MaidSkill1 : MonoBehaviour
     {
         return realdamage;
     }
+
+    public int ReturnSkillLv()
+    {
+        return realskillLv;
+    }
 }

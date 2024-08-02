@@ -13,6 +13,7 @@ TagManager:
   - Enemy
   - MapRange
   - Explosion
+  - Director
   layers:
   - Default
   - TransparentFX
