@@ -126,12 +126,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c8a906ac5870b045bde6ddcb42b3f5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHp: 0
+  MaxHp: 100
   moveSpeed: 10
   Smoke: {fileID: 5117505643571055272, guid: 5c5bd2b70bcd6fd49998cd1fdeeefe2f, type: 3}
   Level: 1
   Exp: 0
   Hp: 0
+  ExpNeed: 0
+  Skill1: {fileID: 2969344583317259381}
+  Skill2: {fileID: 9021466366555041219}
+  Skill3: {fileID: 0}
+  Skill4: {fileID: 5406697741600285840}
 --- !u!114 &5406697741600285840
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -372,6 +377,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2039794830757997935}
     - target: {fileID: 2616663049953513804, guid: a2efd1019c7559b4dae07bad66d67716, type: 3}
+      propertyPath: damage
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2616663049953513804, guid: a2efd1019c7559b4dae07bad66d67716, type: 3}
       propertyPath: rotaterange
       value: 100
       objectReference: {fileID: 0}
@@ -425,6 +434,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3351041851233508559, guid: a2efd1019c7559b4dae07bad66d67716, type: 3}
   m_PrefabInstance: {fileID: 965311855776339257}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2969344583317259381 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2616663049953513804, guid: a2efd1019c7559b4dae07bad66d67716, type: 3}
+  m_PrefabInstance: {fileID: 965311855776339257}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d990bea622de64c42a7fd7e5079d545d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3224617240016052837
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -491,3 +511,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1609766357558367158, guid: 50016990d51741e459a6c5cf2f7a504f, type: 3}
   m_PrefabInstance: {fileID: 3224617240016052837}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &9021466366555041219 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5904935543508324262, guid: 50016990d51741e459a6c5cf2f7a504f, type: 3}
+  m_PrefabInstance: {fileID: 3224617240016052837}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffbfd068980bdd54c880726935bb47e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

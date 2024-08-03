@@ -7,13 +7,19 @@ public class MagicControl : MonoBehaviour
     private GameObject Target;
     private float Speed;
     private int Damage;
+    private float Range;
 
+    private Vector3 StartPos;
     private Vector3 Dir;
 
-    // Update is called once per frame
+    void Start()
+    {
+        StartPos=transform.position;
+    }
     void Update()
     {
         MoveToTarget();
+        DestroySelf();
     }
 
     private void ChangeDir()
@@ -47,11 +53,20 @@ public class MagicControl : MonoBehaviour
         transform.rotation = Quaternion.Euler(0, 0, angle);
     }
 
-    public void SetInfo(GameObject target,float speed,int damage)
+    private void DestroySelf()
+    {
+        if (Vector3.Distance(transform.position, StartPos) >= Range)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    public void SetInfo(GameObject target,float speed,int damage,float range)
     {
         Target = target;
         Speed = speed;
         Damage = damage;
+        Range= range;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

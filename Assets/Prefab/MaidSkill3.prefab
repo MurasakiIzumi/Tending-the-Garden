@@ -63,6 +63,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 7341581150047832732}
     m_Modifications:
     - target: {fileID: 100968198619672798, guid: 9d4598297dc4a4f41bcea7977afb8575, type: 3}
+      propertyPath: Magic
+      value: 
+      objectReference: {fileID: 1928306337572233280, guid: 6ed6bacf163d8c246b7221338301b640, type: 3}
+    - target: {fileID: 100968198619672798, guid: 9d4598297dc4a4f41bcea7977afb8575, type: 3}
       propertyPath: offsetL.x
       value: -1.75
       objectReference: {fileID: 0}
@@ -74,6 +78,10 @@ PrefabInstance:
       propertyPath: maidSkill3
       value: 
       objectReference: {fileID: 4818168145275104409}
+    - target: {fileID: 100968198619672798, guid: 9d4598297dc4a4f41bcea7977afb8575, type: 3}
+      propertyPath: AnotherDoll
+      value: 
+      objectReference: {fileID: 2075208740044437245}
     - target: {fileID: 231693756441501913, guid: 9d4598297dc4a4f41bcea7977afb8575, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.75
@@ -123,6 +131,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9d4598297dc4a4f41bcea7977afb8575, type: 3}
+--- !u!114 &412943534162685594 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 100968198619672798, guid: 9d4598297dc4a4f41bcea7977afb8575, type: 3}
+  m_PrefabInstance: {fileID: 350621057353883204}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5030794091751526473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebb3c64bc8711434fb531d585629962f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &570413163590631069 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 231693756441501913, guid: 9d4598297dc4a4f41bcea7977afb8575, type: 3}
@@ -142,6 +161,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 7341581150047832732}
     m_Modifications:
     - target: {fileID: 100968198619672798, guid: 9d4598297dc4a4f41bcea7977afb8575, type: 3}
+      propertyPath: Magic
+      value: 
+      objectReference: {fileID: 1928306337572233280, guid: 6ed6bacf163d8c246b7221338301b640, type: 3}
+    - target: {fileID: 100968198619672798, guid: 9d4598297dc4a4f41bcea7977afb8575, type: 3}
       propertyPath: offsetL.x
       value: 0.75
       objectReference: {fileID: 0}
@@ -153,6 +176,10 @@ PrefabInstance:
       propertyPath: maidSkill3
       value: 
       objectReference: {fileID: 4818168145275104409}
+    - target: {fileID: 100968198619672798, guid: 9d4598297dc4a4f41bcea7977afb8575, type: 3}
+      propertyPath: AnotherDoll
+      value: 
+      objectReference: {fileID: 412943534162685594}
     - target: {fileID: 231693756441501913, guid: 9d4598297dc4a4f41bcea7977afb8575, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.75
@@ -202,6 +229,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9d4598297dc4a4f41bcea7977afb8575, type: 3}
+--- !u!114 &2075208740044437245 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 100968198619672798, guid: 9d4598297dc4a4f41bcea7977afb8575, type: 3}
+  m_PrefabInstance: {fileID: 2137566396806350371}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6676434972868741166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebb3c64bc8711434fb531d585629962f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &2205934160527976186 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 231693756441501913, guid: 9d4598297dc4a4f41bcea7977afb8575, type: 3}

@@ -74,7 +74,7 @@ public class DollControl : MonoBehaviour
     {
         GameObject newMagic = Instantiate(Magic, transform.position, Quaternion.identity);
         MagicControl newmagicControl=newMagic.GetComponent<MagicControl>();
-        newmagicControl.SetInfo(Target, maidSkill3.ReturnMagicSpeed(), maidSkill3.ReturnDamage());
+        newmagicControl.SetInfo(Target, maidSkill3.ReturnMagicSpeed(), maidSkill3.ReturnDamage(), Range);
 
         canShoot = false;
     }

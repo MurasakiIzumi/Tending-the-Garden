@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class Director : MonoBehaviour
 {
@@ -23,6 +24,7 @@ public class Director : MonoBehaviour
     private int NowEnemyGroupAlive;
     private int MaxEnemyGroupAlive;
     private int NowEnemyNum;
+    private int Score;
 
     private int SetEnemyLv;
     private int nowPlayerLv;
@@ -41,6 +43,7 @@ public class Director : MonoBehaviour
         NowEnemyGroupAlive = 0;
         MaxEnemyGroupAlive = 8;
         NowEnemyNum = 0;
+        Score = 0;
         SetEnemyLv = 1;
         nowPlayerLv = 1;
         CanSetEnemy = false;
@@ -145,6 +148,7 @@ public class Director : MonoBehaviour
     public void EnemyGroupDestory()
     {
         NowEnemyGroupAlive--;
+        ScoreUp(50);
     }
 
     private void PlayerLevelUp()
@@ -169,5 +173,11 @@ public class Director : MonoBehaviour
     {
         NowEnemyNum++;
         return NowEnemyNum;
+    }
+
+    public void ScoreUp(int num)
+    {
+        Score += num;
+        ui.SetScore(Score);
     }
 }

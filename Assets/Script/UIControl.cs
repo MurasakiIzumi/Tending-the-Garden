@@ -8,6 +8,7 @@ public class UIControl : MonoBehaviour
 {
     [Header("HPバー")] public GameObject Hp;
     [Header("タイマー")] public GameObject Timer;
+    [Header("スコアバー")] public GameObject Score;
     [Header("Levelバー")] public GameObject Level;
     [Header("Expバー")] public GameObject Exp;
 
@@ -15,6 +16,7 @@ public class UIControl : MonoBehaviour
     private float timer;
     private int min;
     private int sec;
+    private int score;
     private int level;
     private int exp;
     private int maxexp;
@@ -25,6 +27,7 @@ public class UIControl : MonoBehaviour
         timer = 0;
         min = 0;
         sec = 0;
+        score = 0;
         level = 0;
         exp = 0;
     }
@@ -38,6 +41,7 @@ public class UIControl : MonoBehaviour
     {
         Hp.GetComponent<TextMeshProUGUI>().text = " HP:" + hp;
         Level.GetComponent<TextMeshProUGUI>().text = "Lv:" + level;
+        Score.GetComponent<TextMeshProUGUI>().text = "Score:" + score;
 
         float Amout = (float)exp / maxexp;
         Exp.GetComponent<Image>().fillAmount = Amout;
@@ -83,6 +87,11 @@ public class UIControl : MonoBehaviour
     public void SetHp(int newhp)
     {
         hp = newhp;
+    }
+
+    public void SetScore(int newscore)
+    {
+        score = newscore;
     }
 
     public void SetLevel(int newlevel)
