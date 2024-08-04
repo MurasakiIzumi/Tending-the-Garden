@@ -55,6 +55,7 @@ public class DollControl : MonoBehaviour
         if (Target == null)
         {
             isLockOn = false;
+            maidSkill3.SetIconFillAmout(false, 0);
             return;
         }
 
@@ -67,6 +68,7 @@ public class DollControl : MonoBehaviour
             Target = null;
             TargetNum = 0;
             isLockOn = false;
+            maidSkill3.SetIconFillAmout(false, 0);
         }
     }
 
@@ -77,6 +79,7 @@ public class DollControl : MonoBehaviour
         newmagicControl.SetInfo(Target, maidSkill3.ReturnMagicSpeed(), maidSkill3.ReturnDamage(), Range);
 
         canShoot = false;
+        maidSkill3.SetIconFillAmout(true, 1);
     }
 
     private void CoolTimer()
@@ -90,6 +93,7 @@ public class DollControl : MonoBehaviour
         {
             timer_cool = 0;
             canShoot = true;
+            maidSkill3.SetIconFillAmout(false, 0);
         }
         else
         {

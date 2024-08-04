@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MaidSkill4 : MonoBehaviour
 {
@@ -13,6 +15,9 @@ public class MaidSkill4 : MonoBehaviour
     [Header("爆発波")]
     public GameObject ExploA;
     public GameObject ExploB;
+
+    [Header("UI:アイコンカバー")] public Image IconCover;
+    [Header("UI:アイコン回数")] public TextMeshProUGUI IconTimes;
 
     private PlayerControl Player;
     private SpriteRenderer spriteRenderer;
@@ -29,13 +34,15 @@ public class MaidSkill4 : MonoBehaviour
     private int realskillLv;
     private int realdamage;
     private float knockbackPower;
+    private float iconspeed;
+    private bool CanIconRotate;
 
     void Start()
     {
         Player = GetComponent<PlayerControl>();
         spriteRenderer=GetComponent<SpriteRenderer>();
         costTimer = 0f;
-        nowTimes = 0;
+        nowTimes = 1;
         coolTimer = 0f;
         Dir = Vector3.zero;
         isRun = false;
@@ -45,6 +52,8 @@ public class MaidSkill4 : MonoBehaviour
         realskillLv = -1;
         realdamage = 0;
         knockbackPower = 1f;
+        iconspeed = 1f / cooltime;
+        CanIconRotate = false;
     }
 
     void Update()
@@ -53,6 +62,7 @@ public class MaidSkill4 : MonoBehaviour
         TransformRun();
         CostTimer();
         CoolTimer();
+        IconRotate();
         SkillLevelCheck();
     }
 
@@ -75,7 +85,11 @@ public class MaidSkill4 : MonoBehaviour
             nowTimes--;
             startCosttimer = true;
             spriteRenderer.enabled = false;
+            CanIconRotate = true;
+            IconCover.fillAmount = 1f;
+            IconTimes.text = nowTimes.ToString();
             SetExplo(true);
+
         }
     }
 
@@ -129,6 +143,23 @@ public class MaidSkill4 : MonoBehaviour
         {
             coolTimer += Time.deltaTime;
         }
+
+        IconTimes.text = nowTimes.ToString();
+    }
+
+    private void IconRotate()
+    {
+        if (!CanIconRotate)
+        {
+            return;
+        }
+
+        IconCover.fillAmount -= iconspeed * Time.deltaTime;
+
+        if (IconCover.fillAmount <= 0)
+        {
+            IconCover.fillAmount = 0;
+        }
     }
 
     private bool CheckCanRun()
@@ -139,6 +170,8 @@ public class MaidSkill4 : MonoBehaviour
         }
         else if (nowTimes < 1)
         {
+            IconCover.fillAmount = 1f;
+            CanIconRotate = false;
             return false;
         }
         else

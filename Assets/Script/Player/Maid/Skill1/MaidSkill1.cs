@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MaidSkill1 : MonoBehaviour
 {
@@ -10,10 +11,12 @@ public class MaidSkill1 : MonoBehaviour
     [Header("回転角度")] public float rotaterange = 90f;
     [Header("攻撃力")] public int damage = 20;
     [Header("ほうき")] public GameObject Houki;
+    [Header("UI:アイコンカバー")] public Image IconCover;
 
     [SerializeField] public int skillLv = 1;
     private int realskillLv;
     private int realdamage;
+    private float iconspeed;
     private Vector3 CenterPos;
     private Vector3 Dir;
     private float CenterAngle;
@@ -30,6 +33,7 @@ public class MaidSkill1 : MonoBehaviour
     {
         realskillLv = -1;
         realdamage = damage;
+        iconspeed = rotatespeed / 100f;
         toStart = false;
         isRun = false;
         RighttoLeft = true;
@@ -59,6 +63,7 @@ public class MaidSkill1 : MonoBehaviour
             CenterAngle = angle;
 
             toStart = true;
+            IconCover.fillAmount = 1;
         }
     }
 
@@ -106,6 +111,7 @@ public class MaidSkill1 : MonoBehaviour
 
             AlphaChange();
             transform.rotation = Quaternion.Euler(0, 0, RealAngle);
+            IconCover.fillAmount -= iconspeed * Time.deltaTime;
 
             if (RealAngle == EndAngle)
             {
@@ -120,6 +126,7 @@ public class MaidSkill1 : MonoBehaviour
 
                 isRun = false;
                 toStart = false;
+                IconCover.fillAmount = 0;
 
                 Houki.GetComponent<HoukiControl>().SetAlphaZero();
             }
@@ -182,6 +189,7 @@ public class MaidSkill1 : MonoBehaviour
     private void SkillLv3()
     {
         rotatespeed *= 2f;
+        iconspeed *= 2f;
 
         Debug.Log("メイドスギル2:Lv3");
     }
@@ -189,6 +197,7 @@ public class MaidSkill1 : MonoBehaviour
     private void SkillLv4()
     {
         rotaterange *= 3f;
+        iconspeed *= 0.35f;
 
         Debug.Log("メイドスギル2:LvMax");
     }

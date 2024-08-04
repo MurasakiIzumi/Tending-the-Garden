@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MaidSkill2 : MonoBehaviour
 {
@@ -15,20 +16,26 @@ public class MaidSkill2 : MonoBehaviour
     public GameObject Hataki5;
     public GameObject Hataki6;
 
+    [Header("UI:アイコン")] public Image Icon;
+    [Header("UI:アイコンカバー")] public Image IconCover;
+
     [SerializeField] public int skillLv;
     private int realskillLv;
     private int realdamage;
     private Vector3 CenterPos;
+    private bool CanIconRotate;
 
     void Start()
     {
         realskillLv = -1;
         realdamage = 0;
+        CanIconRotate = false;
     }
 
     void Update()
     {
         Rotate();
+        IconRotate();
         SkillLevelCheck();
     }
 
@@ -42,6 +49,21 @@ public class MaidSkill2 : MonoBehaviour
         CenterPos = Player.transform.position;
 
         transform.RotateAround(CenterPos, Vector3.forward, rotatespeed * Time.deltaTime);
+    }
+
+    private void IconRotate()
+    {
+        if (!CanIconRotate)
+        {
+            return;
+        }
+
+        IconCover.fillAmount -= Time.deltaTime;
+
+        if(IconCover.fillAmount<=0)
+        { 
+            IconCover.fillAmount = 1;
+        }
     }
 
     private void SkillLevelCheck()
@@ -83,6 +105,9 @@ public class MaidSkill2 : MonoBehaviour
         Hataki4.SetActive(false);
         Hataki5.SetActive(false);
         Hataki6.SetActive(false);
+        Icon.gameObject.SetActive(false);
+        IconCover.gameObject.SetActive(false);
+        CanIconRotate = false;
 
         Debug.Log("メイドスギル2:Lv0");
     }
@@ -95,6 +120,9 @@ public class MaidSkill2 : MonoBehaviour
         Hataki4.SetActive(true);
         Hataki5.SetActive(false);
         Hataki6.SetActive(true);
+        Icon.gameObject.SetActive(true);
+        IconCover.gameObject.SetActive(true);
+        CanIconRotate = true;
 
         Debug.Log("メイドスギル2:Lv1");
     }
