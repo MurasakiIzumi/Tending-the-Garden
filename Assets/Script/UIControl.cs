@@ -11,6 +11,8 @@ public class UIControl : MonoBehaviour
     [Header("スコアバー")] public GameObject Score;
     [Header("Levelバー")] public GameObject Level;
     [Header("Expバー")] public GameObject Exp;
+    public Image expbarimage1;
+    public Image expbarimage2;
 
     private int hp;
     private float timer;
@@ -103,5 +105,26 @@ public class UIControl : MonoBehaviour
     {
         exp = newexp;
         maxexp = newmaxexp;
+    }
+
+    public void SetTextColorBlack()
+    {
+        Hp.GetComponent<TextMeshProUGUI>().color = Color.black;
+        Level.GetComponent<TextMeshProUGUI>().color = Color.black;
+        Score.GetComponent<TextMeshProUGUI>().color = Color.black;
+        Exp.GetComponent<Image>().color = Color.black;
+        expbarimage1.color = Color.black;
+        expbarimage2.color = Color.black;
+        Timer.GetComponent<TextMeshProUGUI>().color = Color.black;
+    }
+
+    public int ReturnTimeMin()
+    {
+        return min;
+    }
+
+    public int ReturnTimeSec()
+    {
+        return sec;
     }
 }

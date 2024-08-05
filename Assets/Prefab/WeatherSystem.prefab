@@ -115,9 +115,9 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8151428609888795304}
+  - {fileID: 9134691584450134483}
   - {fileID: 2431660195865243436}
   - {fileID: 6508175321325020206}
-  - {fileID: 9134691584450134483}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8959254295240855334
@@ -133,9 +133,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SunShine: {fileID: 6589067715384895625}
+  Night: {fileID: 4172200036694477077}
   Rain: {fileID: 7923492287232838100}
   Fog: {fileID: 2319357763155707797}
-  Night: {fileID: 4172200036694477077}
 --- !u!1 &4172200036694477077
 GameObject:
   m_ObjectHideFlags: 0

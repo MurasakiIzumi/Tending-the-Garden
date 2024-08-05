@@ -8,6 +8,9 @@ public class SEPlayer : MonoBehaviour
     public AudioSource BGMPlayer;
     public AudioClip SE1;
     public AudioClip SE2;
+    public AudioClip SE3;
+
+    public GameObject StartButton;
 
     private AudioSource audioSource;
 
@@ -22,7 +25,7 @@ public class SEPlayer : MonoBehaviour
     {
         if ((audioSource.clip == SE1) && (!audioSource.isPlaying))
         {
-            StartCoroutine("SEWait", 1f);
+            StartCoroutine("SEWait", 0.5f);
         }
     }
 
@@ -31,6 +34,17 @@ public class SEPlayer : MonoBehaviour
         yield return new WaitForSecondsRealtime(sec);
 
         audioSource.clip = SE2;
+        audioSource.Play();
+    }
+
+    public void PlayerBubu()
+    {
+        if (audioSource.clip == SE3)
+        {
+            return;
+        }
+        
+        audioSource.clip = SE3;
         audioSource.Play();
     }
 }

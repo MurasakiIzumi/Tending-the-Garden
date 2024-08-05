@@ -1,11 +1,10 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.Numerics;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
-public class Button : MonoBehaviour
+public class ButtonA : MonoBehaviour
 {
     [Header("BGMPlayer")] public AudioSource BGMplayer;
     [Header("‘Ò‚ÂŽžŠÔ")] public float Second = 1f;
@@ -15,13 +14,17 @@ public class Button : MonoBehaviour
     public void LordScene(int Index)
     {
         PlaySE();
+        GetComponent<Button>().enabled = false;
         StartCoroutine("LordWait", Index);
+
     }
 
     public void ExitGame()
     {
         PlaySE();
+        gameObject.GetComponent<Button>().enabled = false;
         StartCoroutine("ExitWait");
+
     }
 
     IEnumerator LordWait(int Index)
@@ -44,6 +47,11 @@ public class Button : MonoBehaviour
 
     private void PlaySE()
     {
+        if (!BGMplayer)
+        {
+            return;
+        }
+
         BGMplayer.Stop();
         audioSource=GetComponent<AudioSource>();
         audioSource.Play();

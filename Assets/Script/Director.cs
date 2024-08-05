@@ -2,18 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
+using UnityEngine.SceneManagement;
 using UnityEngine.SocialPlatforms.Impl;
 
 public class Director : MonoBehaviour
 {
     [Header("Player")] public GameObject Player;
-    [Header("天気")] public GameObject Weather;
+    [Header("天気")] public WeatherControl Weather;
     [Header("UI")] public GameObject UI;
     [Header("Enemy生成位置")] public Transform[] EnemySetPos;
     [Header("EnemyGroup")] public GameObject EnemyGroup;
     [Header("LevelUpシステム")] public LevelUpSystem levelUpSystem;
 
-    private GameObject dataMessager;
+    private DataMessager dataMessager;
+    //private int playerindex;
+    private int weatherindex;
 
     private PlayerControl player;
     private UIControl ui;
@@ -36,8 +39,9 @@ public class Director : MonoBehaviour
         player=Player.GetComponent<PlayerControl>();
         ui=UI.GetComponent<UIControl>();
 
-        //dataMessager = GameObject.Find("DataMessager");
-        
+        dataMessager = FindAnyObjectByType<DataMessager>().GetComponent<DataMessager>();
+        GetInfoFromDataMessager();
+
         time_SetEnemy = 7f;
         timer_SetEnemy = time_SetEnemy;
         NowEnemyGroupAlive = 0;
@@ -56,6 +60,7 @@ public class Director : MonoBehaviour
         CheckSetEnemyLevl();
         SetEnemyMain();
         PlayerLevelUp();
+        CheckPlayerDead();
     }
 
     private void MoveWithPlayer()
@@ -164,6 +169,16 @@ public class Director : MonoBehaviour
         }
     }
 
+    private void CheckPlayerDead()
+    {
+        if (player.ReturnHp() <= 0)
+        {
+            dataMessager.SetTime(ui.ReturnTimeMin(), ui.ReturnTimeSec());
+            dataMessager.SetScore(Score);
+            SceneManager.LoadScene(4);
+        }
+    }
+
     public void SetSkillLv(int index)
     {
         player.SetSkillLv(index);
@@ -180,4 +195,19 @@ public class Director : MonoBehaviour
         Score += num;
         ui.SetScore(Score);
     }
+
+    private void GetInfoFromDataMessager()
+    {
+        //playerindex = dataMessager.ReturnPlayerIndex();
+        weatherindex = dataMessager.ReturnWeatherIndex();
+
+        Weather.SetWeather(weatherindex);
+
+        if (weatherindex == 4)
+        {
+            ui.SetTextColorBlack();
+        }
+
+    }
+
 }

@@ -5,7 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class DataMessager : MonoBehaviour
 {
-    private int Weathernum;
+    private int PlayerIndex;
+    private int WeatherIndex;
+
+    private int Time_Min;
+    private int Time_Sec;
+    private int Score;
 
     void Start()
     {
@@ -20,5 +25,51 @@ public class DataMessager : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void SetPlayer(int index)
+    {
+        PlayerIndex = index;
+    }
+
+    public int ReturnPlayerIndex()
+    {
+        return PlayerIndex;
+    }
+
+    public void SetWeather(int index)
+    {
+        WeatherIndex = index;
+    }
+
+    public int ReturnWeatherIndex()
+    {
+        return WeatherIndex;
+    }
+
+    public void SetTime(int min,int sec)
+    {
+        Time_Min = min;
+        Time_Sec = sec;
+    }
+
+    public int ReturnTimeMin()
+    {
+        return Time_Min;
+    }
+
+    public int ReturnTimeSec()
+    {
+        return Time_Sec;
+    }
+
+    public void SetScore(int score)
+    {
+        Score = score;
+    }
+
+    public int ReturnScore()
+    {
+        return Score;
     }
 }
