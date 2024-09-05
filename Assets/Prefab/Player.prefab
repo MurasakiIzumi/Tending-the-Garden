@@ -82,7 +82,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: fc12be37ad9c14d4785d418db8215be5, type: 3}
+  m_Sprite: {fileID: -693851703, guid: eaf201e019d11174b9206ab9ad87b09f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -156,6 +156,8 @@ MonoBehaviour:
   damage: 10
   ExploA: {fileID: 8768124840883853309, guid: 160792f8e26430c4fa545a14740ad864, type: 3}
   ExploB: {fileID: 7415946000228894775, guid: 119b99bc044549f4db66c5e7e761055d, type: 3}
+  IconCover: {fileID: 0}
+  IconTimes: {fileID: 0}
   skillLv: 0
 --- !u!61 &6382116231544461757
 BoxCollider2D:
@@ -193,7 +195,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 5.12, y: 2.56}
+    oldSize: {x: 5.12, y: 5.12}
     newSize: {x: 5.12, y: 2.56}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

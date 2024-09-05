@@ -31,6 +31,8 @@ public class PlayerControl : MonoBehaviour
 
     private float knockbackPower;
 
+    private int playerdir;
+
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -51,6 +53,8 @@ public class PlayerControl : MonoBehaviour
         time_nodamge = 0.2f;
 
         knockbackPower = 2f;
+
+        playerdir = 2;
     }
 
 
@@ -83,7 +87,7 @@ public class PlayerControl : MonoBehaviour
 
         if ((moveX != 0) || (moveY != 0))
         {
-            animator.Play("Move");
+            PlayerAnimationControl(moveX, moveY);
             PlayWalkSE();
 
             if (timer_smoke >= time_smoke)
@@ -98,12 +102,61 @@ public class PlayerControl : MonoBehaviour
         }
         else
         {
-            animator.Play("Idle");
+            PlayerAnimationControl();
             StopWalkSE();
             timer_smoke = 0;
         }
 
         transform.position += new Vector3(moveX, moveY, 0) * moveSpeed * Time.deltaTime;
+    }
+
+    private void PlayerAnimationControl()
+    {
+        switch (playerdir)
+        {
+            case 2:
+                animator.Play("IdleS");
+                break;
+            case 4:
+                animator.Play("IdleD");
+                break;
+            case 6:
+                animator.Play("IdleD");
+                break;
+            case 8:
+                animator.Play("IdleW");
+                break;
+        }
+    }
+
+    private void PlayerAnimationControl(float moveX, float moveY)
+    {
+        if (moveY == 0)
+        {
+            if (moveX < 0)
+            {
+                animator.Play("MoveD");
+                playerdir = 4;
+            }
+            else
+            {
+                animator.Play("MoveD");
+                playerdir = 6;
+            }
+        }
+        else
+        {
+            if (moveY < 0)
+            {
+                animator.Play("MoveS");
+                playerdir = 2;
+            }
+            else
+            {
+                animator.Play("MoveW");
+                playerdir = 8;
+            }
+        }
     }
 
     private void SmokeMaker()
