@@ -119941,6 +119941,10 @@ PrefabInstance:
       propertyPath: Skill4
       value: 
       objectReference: {fileID: 1235128852}
+    - target: {fileID: 2763083052887419722, guid: fbcc001bc78a3694993d43f196d6ac17, type: 3}
+      propertyPath: SE_GetHurt
+      value: 
+      objectReference: {fileID: 8300000, guid: 8df40ddd5853fc140a376aad19de5fc9, type: 3}
     - target: {fileID: 2969344583317259381, guid: fbcc001bc78a3694993d43f196d6ac17, type: 3}
       propertyPath: Icon
       value: 

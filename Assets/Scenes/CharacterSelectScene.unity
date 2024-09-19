@@ -596,6 +596,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selectSystem: {fileID: 1952276987}
+  SelectVoice: {fileID: 0}
 --- !u!1 &350585685
 GameObject:
   m_ObjectHideFlags: 0
@@ -1708,6 +1709,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selectSystem: {fileID: 1952276987}
+  SelectVoice: {fileID: 0}
 --- !u!1 &1085551065
 GameObject:
   m_ObjectHideFlags: 0
@@ -1922,6 +1924,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selectSystem: {fileID: 1952276987}
+  SelectVoice: {fileID: 8300000, guid: c0a4e99d52875004db75a9d6a9573438, type: 3}
 --- !u!1 &1228261722
 GameObject:
   m_ObjectHideFlags: 0
@@ -2215,6 +2218,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selectSystem: {fileID: 1952276987}
+  SelectVoice: {fileID: 0}
 --- !u!1 &1362532776
 GameObject:
   m_ObjectHideFlags: 0
@@ -2361,6 +2365,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selectSystem: {fileID: 1952276987}
+  SelectVoice: {fileID: 0}
 --- !u!1 &1453220374
 GameObject:
   m_ObjectHideFlags: 0
@@ -2415,7 +2420,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BGMplayer: {fileID: 1509404798}
-  Second: 1.5
+  Second: 1
 --- !u!114 &1453220377
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2753,6 +2758,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selectSystem: {fileID: 1952276987}
+  SelectVoice: {fileID: 0}
 --- !u!1 &1509404797
 GameObject:
   m_ObjectHideFlags: 0

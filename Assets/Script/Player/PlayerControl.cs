@@ -18,6 +18,8 @@ public class PlayerControl : MonoBehaviour
     [Header("自動スギル2")] public MaidSkill3 Skill3;
     [Header("自動スギル3")] public MaidSkill4 Skill4;
 
+    [Header("受撃ボイスプレイヤー")] public AudioSource GetHurtSEplayer;
+
     private Animator animator;
     private SpriteRenderer spriteRenderer;
     private AudioSource audioSource;
@@ -46,7 +48,7 @@ public class PlayerControl : MonoBehaviour
         timer_smoke = 0;
         time_smoke = 0.2f;
 
-        ExpNeed = 4;
+        ExpNeed = 8;
 
         nodamage = false;
         timer_nodamge = 0;
@@ -187,7 +189,7 @@ public class PlayerControl : MonoBehaviour
         {
             Exp = 0;
             Level++;
-            ExpNeed *= 2;
+            ExpNeed = (int)(ExpNeed * 1.25f);
         }
     }
 
@@ -202,6 +204,7 @@ public class PlayerControl : MonoBehaviour
         {
             Hp-=damage;
             nodamage = true;
+            GetHurtSEplayer.Play();
         }
     }
 

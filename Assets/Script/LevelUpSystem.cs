@@ -14,10 +14,6 @@ public class LevelUpSystem : MonoBehaviour
     public Vector3 LPos;
     public Vector3 RPos;
 
-    void Start()
-    {
-    }
-
     public void ResetSystem()
     {
         Skill1.transform.localPosition = Vector3.zero;
@@ -103,7 +99,14 @@ public class LevelUpSystem : MonoBehaviour
             }
         }
 
-        int Mnum = Random.Range(1, 5);
+        int Mnum = Random.Range(1, 6);
+        if(Mnum==Lnum)
+        {
+            if (Lnum != 5)
+            {
+                Mnum++;
+            }
+        }
         Debug.Log(Mnum);
 
         for (; ; )
@@ -165,7 +168,24 @@ public class LevelUpSystem : MonoBehaviour
             }
         }
 
-        int Rnum = Random.Range(1, 5);
+        int Rnum = Random.Range(1, 6);
+        if ((Rnum == Lnum) || (Rnum == Mnum))
+        {
+            Rnum++;
+            if (Rnum > 5)
+            {
+                Rnum = 1;
+            }
+
+            if ((Rnum == Lnum) || (Rnum == Mnum))
+            {
+                Rnum++;
+                if (Rnum > 5)
+                {
+                    Rnum = 1;
+                }
+            }
+        }
         Debug.Log(Rnum);
 
         for (; ; )
@@ -233,75 +253,94 @@ public class LevelUpSystem : MonoBehaviour
 
     private void SetPos(int Lnum, int Mnum, int Rnum)
     {
+        GameObject Skill_L;
+        GameObject Skill_M;
+        GameObject Skill_R;
+
         switch (Lnum)
         {
             case 1:
-                Skill1.transform.localPosition = LPos;
-                Skill1.SetActive(true);
+                Skill_L = Instantiate(Skill1, gameObject.transform);
+                Skill_L.transform.localPosition = LPos;
+                Skill_L.SetActive(true);
                 break;
             case 2:
-                Skill2.transform.localPosition = LPos;
-                Skill2.SetActive(true);
+                Skill_L = Instantiate(Skill2, gameObject.transform);
+                Skill_L.transform.localPosition = LPos;
+                Skill_L.SetActive(true);
                 break;
             case 3:
-                Skill3.transform.localPosition = LPos;
-                Skill3.SetActive(true);
+                Skill_L = Instantiate(Skill3, gameObject.transform);
+                Skill_L.transform.localPosition = LPos;
+                Skill_L.SetActive(true);
                 break;
             case 4:
-                Skill4.transform.localPosition = LPos;
-                Skill4.SetActive(true);
+                Skill_L = Instantiate(Skill4, gameObject.transform);
+                Skill_L.transform.localPosition = LPos;
+                Skill_L.SetActive(true);
                 break;
             case 5:
-                HpUp.transform.localPosition = LPos;
-                HpUp.SetActive(true);
+                Skill_L = Instantiate(HpUp, gameObject.transform);
+                Skill_L.transform.localPosition = LPos;
+                Skill_L.SetActive(true);
                 break;
         }
 
         switch (Mnum)
         {
             case 1:
-                Skill1.transform.localPosition = Vector3.zero;
-                Skill1.SetActive(true);
+                Skill_M = Instantiate(Skill1, gameObject.transform);
+                Skill_M.transform.localPosition = Vector3.zero;
+                Skill_M.SetActive(true);
                 break;
             case 2:
-                Skill2.transform.localPosition = Vector3.zero;
-                Skill2.SetActive(true);
+                Skill_M = Instantiate(Skill2, gameObject.transform);
+                Skill_M.transform.localPosition = Vector3.zero;
+                Skill_M.SetActive(true);
                 break;
             case 3:
-                Skill3.transform.localPosition = Vector3.zero;
-                Skill3.SetActive(true);
+                Skill_M = Instantiate(Skill3, gameObject.transform);
+                Skill_M.transform.localPosition = Vector3.zero;
+                Skill_M.SetActive(true);
                 break;
             case 4:
-                Skill4.transform.localPosition = Vector3.zero;
-                Skill4.SetActive(true);
+                Skill_M = Instantiate(Skill4, gameObject.transform);
+                Skill_M.transform.localPosition = Vector3.zero;
+                Skill_M.SetActive(true);
                 break;
             case 5:
-                HpUp.transform.localPosition = Vector3.zero;
-                HpUp.SetActive(true);
+                Skill_M = Instantiate(HpUp, gameObject.transform);
+                Skill_M.transform.localPosition = Vector3.zero;
+                Skill_M.SetActive(true);
                 break;
         }
 
         switch (Rnum)
         {
             case 1:
-                Skill1.transform.localPosition = RPos;
-                Skill1.SetActive(true);
+                Skill_R = Instantiate(Skill1, gameObject.transform);
+                Skill_R.transform.localPosition = RPos;
+                Skill_R.SetActive(true);
                 break;
             case 2:
-                Skill2.transform.localPosition = RPos;
-                Skill2.SetActive(true);
+                Skill_R = Instantiate(Skill2, gameObject.transform);
+                Skill_R.transform.localPosition = RPos;
+                Skill_R.SetActive(true);
                 break;
             case 3:
-                Skill3.transform.localPosition = RPos;
-                Skill3.SetActive(true);
+                Skill_R = Instantiate(Skill3, gameObject.transform);
+                Skill_R.transform.localPosition = RPos;
+                Skill_R.SetActive(true);
                 break;
             case 4:
-                Skill4.transform.localPosition = RPos;
-                Skill4.SetActive(true);
+                Skill_R = Instantiate(Skill4, gameObject.transform);
+                Skill_R.transform.localPosition = RPos;
+                Skill_R.SetActive(true);
                 break;
             case 5:
-                HpUp.transform.localPosition = RPos;
-                HpUp.SetActive(true);
+                Skill_R = Instantiate(HpUp, gameObject.transform);
+                Skill_R.transform.localPosition = RPos;
+                Skill_R.SetActive(true);
                 break;
         }
     }

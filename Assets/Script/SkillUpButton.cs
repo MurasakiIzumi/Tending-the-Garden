@@ -13,5 +13,6 @@ public class SkillUpButton : MonoBehaviour
 
         Time.timeScale = 1;
         levelUpSystem.SetActive(false);
+        Destroy(gameObject);
     }
 }

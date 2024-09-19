@@ -12,6 +12,8 @@ public class MaidSkill1 : MonoBehaviour
     [Header("攻撃力")] public int damage = 20;
     [Header("ほうき")] public GameObject Houki;
     [Header("UI:アイコンカバー")] public Image IconCover;
+    [Header("攻撃ボイス1")] public AudioClip Se1;
+    [Header("攻撃ボイス2")] public AudioClip Se2;
 
     [SerializeField] public int skillLv = 1;
     private int realskillLv;
@@ -29,6 +31,8 @@ public class MaidSkill1 : MonoBehaviour
     private bool isRun;
     private bool RighttoLeft;
 
+    private AudioSource SEplayer;
+
     void Start()
     {
         realskillLv = -1;
@@ -37,6 +41,8 @@ public class MaidSkill1 : MonoBehaviour
         toStart = false;
         isRun = false;
         RighttoLeft = true;
+
+        SEplayer=GetComponent<AudioSource>();
     }
 
     void Update()
@@ -91,6 +97,7 @@ public class MaidSkill1 : MonoBehaviour
             transform.rotation = Quaternion.Euler(0, 0, StartAngle);
             Houki.GetComponent<HoukiControl>().SetAlphaUpStart();
 
+            PlaySE();
             isRun = true;
         }
 
@@ -142,6 +149,22 @@ public class MaidSkill1 : MonoBehaviour
         {
             Houki.GetComponent<HoukiControl>().SetAlphaDownStart();
         }
+    }
+
+    private void PlaySE()
+    {
+        int SEIndex = Random.Range(0, 2);
+
+        if (SEIndex == 0)
+        {
+            SEplayer.clip = Se1;
+        }
+        else
+        {
+            SEplayer.clip = Se2;
+        }
+
+        SEplayer.Play();
     }
 
     private void SkillLevelCheck()
