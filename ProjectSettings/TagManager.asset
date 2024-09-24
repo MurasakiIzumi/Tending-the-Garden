@@ -15,6 +15,7 @@ TagManager:
   - Explosion
   - Director
   - Enemy(Stop)
+  - Exit
   layers:
   - Default
   - TransparentFX

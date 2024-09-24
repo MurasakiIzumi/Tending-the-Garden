@@ -179,6 +179,13 @@ public class Director : MonoBehaviour
         }
     }
 
+    public void PlayerExit()
+    {
+        dataMessager.SetTime(ui.ReturnTimeMin(), ui.ReturnTimeSec());
+        dataMessager.SetScore(Score);
+        SceneManager.LoadScene(4);
+    }
+
     public void SetSkillLv(int index)
     {
         player.SetSkillLv(index);

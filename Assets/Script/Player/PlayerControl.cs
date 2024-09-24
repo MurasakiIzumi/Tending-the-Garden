@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerControl : MonoBehaviour
 {
+    [Header("ディレクター")] public Director director;
     [Header("最大HP")] public int MaxHp;
     [Header("移動速度")] public float moveSpeed;
     [Header("煙幕")] public GameObject Smoke;
@@ -35,6 +36,8 @@ public class PlayerControl : MonoBehaviour
 
     private int playerdir;
 
+    private bool isExit;
+
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -57,11 +60,13 @@ public class PlayerControl : MonoBehaviour
         knockbackPower = 2f;
 
         playerdir = 2;
+        isExit = false;
     }
 
 
     void Update()
     {
+
         ForwardChange();
         PlayerMove();
         LevelUp();
@@ -84,8 +89,14 @@ public class PlayerControl : MonoBehaviour
 
     private void PlayerMove()
     {
-        float moveX = Input.GetAxisRaw("Horizontal");
-        float moveY = Input.GetAxisRaw("Vertical");
+        float moveX = 0;
+        float moveY = 0;
+
+        if (!isExit)
+        {
+            moveX = Input.GetAxisRaw("Horizontal");
+            moveY = Input.GetAxisRaw("Vertical");
+        }
 
         if ((moveX != 0) || (moveY != 0))
         {
@@ -294,6 +305,22 @@ public class PlayerControl : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-       
+        if (collision.gameObject.tag == "Exit")
+        {
+            Time.timeScale = 0.3f;
+            animator.updateMode = AnimatorUpdateMode.UnscaledTime;
+            collision.gameObject.GetComponent<AudioSource>().Play();
+            isExit = true;
+
+            StartCoroutine("Exit", 3f);
+        }
+    }
+
+    IEnumerator Exit(float sec)
+    {
+        yield return new WaitForSecondsRealtime(sec);
+
+        Time.timeScale = 1;
+        director.PlayerExit();
     }
 }

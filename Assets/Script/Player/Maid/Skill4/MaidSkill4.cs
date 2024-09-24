@@ -13,8 +13,7 @@ public class MaidSkill4 : MonoBehaviour
     [Header("回数回復時間")] public float cooltime = 1f;
     [Header("攻撃力")] public int damage = 10;
     [Header("爆発波")]
-    public GameObject ExploA;
-    public GameObject ExploB;
+    public GameObject Explo;
 
     [Header("UI:アイコンカバー")] public Image IconCover;
     [Header("UI:アイコン回数")] public TextMeshProUGUI IconTimes;
@@ -187,16 +186,8 @@ public class MaidSkill4 : MonoBehaviour
             return;
         }
 
-        if (isA)
-        {
-            GameObject explo = Instantiate(ExploA, transform.position, Quaternion.identity);
-            explo.GetComponent<TeleExploControl>().SetInfo(realdamage, knockbackPower);
-        }
-        else
-        {
-            GameObject explo = Instantiate(ExploB, transform.position, Quaternion.identity);
-            explo.GetComponent<TeleExploControl>().SetInfo(realdamage, knockbackPower);
-        }
+        GameObject explo = Instantiate(Explo, transform.position, Quaternion.identity);
+        explo.GetComponent<TeleExploControl>().SetInfo(realdamage, knockbackPower);
     }
 
     private void SkillLevelCheck()
