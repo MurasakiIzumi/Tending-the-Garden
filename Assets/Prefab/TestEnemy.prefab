@@ -104,7 +104,8 @@ MonoBehaviour:
   Damage: 5
   Speed: 1
   BackPower: 5
-  Exp: {fileID: 5916183812000509986, guid: 2afd38c92b6bd9e49b25d9e8d6f72e18, type: 3}
+  DeadAnime: {fileID: 7767382392037638147, guid: b015d557751b3674e90463ff6d9cdbd1, type: 3}
+  score: 10
   director: {fileID: 3480862855976780968, guid: 130508a136ca14542912799cab0d20e6, type: 3}
   Enemynum: 0
 --- !u!70 &4653710581966368233

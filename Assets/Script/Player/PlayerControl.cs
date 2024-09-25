@@ -307,12 +307,15 @@ public class PlayerControl : MonoBehaviour
     {
         if (collision.gameObject.tag == "Exit")
         {
-            Time.timeScale = 0.3f;
-            animator.updateMode = AnimatorUpdateMode.UnscaledTime;
-            collision.gameObject.GetComponent<AudioSource>().Play();
-            isExit = true;
+            if (Vector3.Distance(transform.position, collision.gameObject.transform.position) <= 1f)
+            {
+                Time.timeScale = 0.3f;
+                animator.updateMode = AnimatorUpdateMode.UnscaledTime;
+                collision.gameObject.GetComponent<AudioSource>().Play();
+                isExit = true;
 
-            StartCoroutine("Exit", 3f);
+                StartCoroutine("Exit", 3f);
+            }
         }
     }
 

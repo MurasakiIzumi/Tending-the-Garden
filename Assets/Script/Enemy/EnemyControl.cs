@@ -9,7 +9,7 @@ public class EnemyControl : MonoBehaviour
     [Header("攻撃力")] public int Damage = 5;
     [Header("速度")] public float Speed = 1f;
     [Header("撃退力")] public float BackPower = 5f;
-    [Header("経験値")] public GameObject Exp;
+    [Header("死亡アニメ")] public GameObject DeadAnime;
     [Header("スコア")] public int score = 10;
     [Header("ディレクター")] public Director director;
     public int Enemynum;
@@ -118,7 +118,7 @@ public class EnemyControl : MonoBehaviour
         if ((hp <= 0) && !beKnockBack)
         {
             director.ScoreUp(score);
-            Instantiate(Exp, transform.position, Quaternion.identity);
+            Instantiate(DeadAnime, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
     }
