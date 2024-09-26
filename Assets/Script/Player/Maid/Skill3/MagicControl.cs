@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MagicControl : MonoBehaviour
 {
+    [Header("”š”­")] public GameObject Explosion;
     private GameObject Target;
     private float Speed;
     private int Damage;
@@ -19,7 +20,7 @@ public class MagicControl : MonoBehaviour
     void Update()
     {
         MoveToTarget();
-        DestroySelf();
+        OutRange();
     }
 
     private void ChangeDir()
@@ -53,12 +54,18 @@ public class MagicControl : MonoBehaviour
         transform.rotation = Quaternion.Euler(0, 0, angle);
     }
 
-    private void DestroySelf()
+    private void OutRange()
     {
         if (Vector3.Distance(transform.position, StartPos) >= Range)
         {
-            Destroy(gameObject);
+            DestroySelf();
         }
+    }
+
+    private void DestroySelf()
+    {
+        Instantiate(Explosion, transform.position, Quaternion.identity);
+        Destroy(gameObject);
     }
 
     public void SetInfo(GameObject target,float speed,int damage,float range)
@@ -73,9 +80,12 @@ public class MagicControl : MonoBehaviour
     {
         if (collision.tag == "Enemy")
         {
-            EnemyControl Enemy = collision.GetComponent<EnemyControl>();
-            Enemy.GetHurt(Damage);
-            Destroy(gameObject);
+            if (Vector3.Distance(transform.position, collision.gameObject.transform.position) <= 2f)
+            {
+                EnemyControl Enemy = collision.GetComponent<EnemyControl>();
+                Enemy.GetHurt(Damage);
+                DestroySelf();
+            }
         }
     }
 }
